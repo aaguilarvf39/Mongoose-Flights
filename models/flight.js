@@ -2,11 +2,21 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const destinationSchema = new Schema ({
+    airline: {
+        type: String,
+        enum: ['Volaris', 'Delta', 'Southwest', 'Air Canada', 'United']
+    },
     airport: {
         type: String,
         enum: ['MEX', 'NRT', 'YVR', 'LAX', 'SAN']
     },
-    arrival: {
+    flightNo: {
+        type: Number,
+        required: true,
+        min: 10,
+        max: 999
+    },
+    arrivals: {
         type: Date
     }
 });
@@ -18,7 +28,7 @@ const flightSchema = new Schema({
     },
     airport: {
         type: String,
-        enum: ['MEX', 'NRT', 'YR', 'LAX', 'SAN'],
+        enum: ['MEX', 'NRT', 'YVR', 'LAX', 'SAN'],
         default: 'MEX'
     },
     flightNo: {

@@ -15,12 +15,11 @@
 
 <br><br><h2>Destinations</h2>
 <form id="add-destination-form" method="POST"
-  action="/flights/<%= flight._id %>/DESTINATIONS">
-  <label>Destinations</label>
-  <textarea name="content"></textarea><br>
+  action="/destinations/<%= flight._id %>">
+  <label>Destinations:</label><br>
 
-  <label>Airline</label>
-  <select name="Airline">
+  <label>Airline:</label>
+  <select name="airline">
       <option value="Volaris">Volaris</option>
       <option value="Delta">Delta</option>
       <option value="Southwest">Southwest</option>
@@ -28,8 +27,8 @@
       <option value="United">United</option>
  </select><br>
 
-  <label>Airport</label>
-  <select name="Airport">
+  <label>Airport:</label>
+  <select name="airport">
       <option value="MEX">MEX</option>
       <option value="NRT">NRT</option>
       <option value="YVR">YVR</option>
@@ -39,10 +38,35 @@
  <label>FlightNo:
      <input type="number" name="flightNo">
  </label><br>
- <label>Departs
-   <input type="datetime-local" name="departs">
+ <label>Arrivals:
+   <input type="datetime-local" name="arrivals">
  </label><br>
   <input type="submit" value="Add Destination">
 </form>
+
+<% if (flight.destinations.length) { %>
+    <table>
+      <thead>
+        <tr>
+           <th>Airline</th>
+          <th>Airport</th>
+          <th>FlightNo.</th>
+          <th>Arrivals</th>
+        </tr>
+      </thead>
+      <tbody>
+         <% flight.destinations.forEach(function(f) { %>
+          <tr>
+            <td><%= f.airline %></td>
+            <td><%= f.airport %></td>
+            <td><%= f.flightNo %></td>
+            <td><%= f.arrivals %></td>
+          </tr>
+        <% }); %>
+      </tbody> 
+    </table>
+  <% } else { %>
+    <h5>No Destinations Yet</h5>
+  <% } %>
 
 <%- include('../partials/footer') %>
