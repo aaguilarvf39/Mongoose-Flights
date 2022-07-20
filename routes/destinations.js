@@ -5,6 +5,6 @@ const destinationsCtrl = require('../controllers/destinations');
 // The starts with path is '/'
 
 // POST /flights/:id/destinations
-router.post('/:id', destinationsCtrl.create);
+router.post('/flights/:id/destinations', destinationsCtrl.create);
 
 module.exports = router;
