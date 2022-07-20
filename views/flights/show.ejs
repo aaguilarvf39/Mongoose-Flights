@@ -69,4 +69,12 @@
     <h5>No Destinations Yet</h5>
   <% } %>
 
+  <form id="add-ticket-form" action="/tickets/<%= flight._id %>" method="POST">
+    <label>Name:</label>
+    <input type="text" name="seat">
+    <label>Born:</label>
+    <input type="number" name="price">
+    <input type="submit" value="Add Ticket">
+  </form>
+
 <%- include('../partials/footer') %>

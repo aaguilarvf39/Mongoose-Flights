@@ -1,4 +1,4 @@
-* {
+ * {
   box-sizing: border-box;
   font-family: Helvetica;
   color: #424748;
@@ -6,10 +6,10 @@
 
 body {
   margin: 0;
-  height: 100vh;
+  height: 10vh;
   display: grid;
   background-color: peachpuff;
-  grid-template-rows: 20px 1fr;
+  grid-template-rows: 55px 1fr;
   grid-template-areas: 
     "nav"
     "main"
@@ -36,11 +36,6 @@ nav > a:hover:not(.active) {
   background-color: #424748;
 }
 
-nav > a.active {
-  color: green;
-  cursor: default;
-}
-
 #add-destination-form {
   display: grid;
   grid-template-columns: auto auto;
@@ -51,4 +46,4 @@ nav > a.active {
   width: 8rem;
   grid-column: 2 / 4;
   margin-bottom: 2rem;
-}
+} 
