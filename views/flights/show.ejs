@@ -16,8 +16,6 @@
 <br><br><h2>Destinations</h2>
 <form id="add-destination-form" method="POST"
   action="/flights/<%= flight._id %>/destinations">
-  <label>Destinations:</label><br>
-
   <label>Airline:</label>
   <select name="airline">
       <option value="Volaris">Volaris</option>
@@ -73,8 +71,8 @@
     <table class="table">
     <tbody>
       <thead>
-        <th>seat</th>
-        <th>price</th>
+        <th>Seat</th>
+        <th>Price</th>
       </thead>
       <% tickets.forEach(function(t) { %>
         <tr>
