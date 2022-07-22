@@ -11,8 +11,8 @@ body {
   background-color: peachpuff;
   grid-template-rows: 55px 1fr;
   grid-template-areas: 
-    "nav"
-    "main"
+  "nav"
+  "main"
 }
 
 body > nav {
@@ -47,6 +47,19 @@ nav > a:hover:not(.active) {
   grid-column: 2 / 4;
   margin-bottom: 2rem;
 } 
+
+h1 {
+  text-align: center;
+  margin-top: 100px;
+} 
+
+h1 > img {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 90px;
+  height: 500px;
+  width: 400px;
+}
 
 table {
   font-size: 20px;
